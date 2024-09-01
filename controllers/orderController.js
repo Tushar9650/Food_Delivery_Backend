@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Placing user order for frontend
 const placeOrder = async (req, res) => {
-    const frontend_url = "http://127.0.0.1:5174/";
+    const frontend_url = "https://food-delivery-backend-3-iaf3.onrender.com/";
 
     try {
         // Create a new order in the database
@@ -52,8 +52,8 @@ const placeOrder = async (req, res) => {
             payment_method_types: ['card'], // Specify the payment methods you want to accept
             line_items: line_items,
             mode: 'payment',
-            success_url: `${frontend_url}verify?success=true&orderId=${newOrder._id}`,
-            cancel_url: `${frontend_url}verify?success=false&orderId=${newOrder._id}`,
+            success_url: `https://food-delivery-frontend-singhota.netlify.app/verify?success=true&orderId=${newOrder._id}`,
+            cancel_url: `https://food-delivery-frontend-singhota.netlify.app/verify?success=false&orderId=${newOrder._id}`,
         });
 
         // Send the session URL to the frontend
