@@ -52,8 +52,10 @@ const placeOrder = async (req, res) => {
             payment_method_types: ['card'], // Specify the payment methods you want to accept
             line_items: line_items,
             mode: 'payment',
-            success_url: `https://food-delivery-frontend-singhota.netlify.app/verify?success=true&orderId=${newOrder._id}`,
-            cancel_url: `https://food-delivery-frontend-singhota.netlify.app/verify?success=false&orderId=${newOrder._id}`,
+            // success_url: `https://food-delivery-frontend-singhota.netlify.app/verify?success=true&orderId=${newOrder._id}`,
+            success_url: `https://food-delivery-frontend-singhota.netlify.app`,
+            // cancel_url: `https://food-delivery-frontend-singhota.netlify.app/verify?success=false&orderId=${newOrder._id}`,
+            cancel_url:  `https://food-delivery-frontend-singhota.netlify.app`,
         });
 
         // Send the session URL to the frontend
